@@ -42,6 +42,7 @@ Repositório dedicado ao desenvolvimento e entrega da atividade final da discipl
 │   ├── data/
 │   └── results/
 └── README.md
+```
 
 ## Módulos do Projeto
 ###1. Sistemas de Busca e Heurísticas (1_sistemas_de_busca)
