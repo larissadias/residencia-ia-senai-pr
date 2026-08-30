@@ -1,61 +1,59 @@
-# Inteligência Artificial - Projetos e Implementações
+# Projeto Final: Inteligência Artificial
+**Disciplina:** Inteligência Artificial  
+**Professor:** Prof. Rafael Bressan  
+**Aluna:** Ana Larissa Dias  
 
-Este repositório centraliza os projetos, algoritmos e desafios desenvolvidos durante a disciplina de Inteligência Artificial. O objetivo principal é documentar a transição de conceitos acadêmicos e teóricos para implementações práticas, aplicáveis na resolução de problemas complexos de otimização, busca e aprendizado de máquina.
+Repositório dedicado ao desenvolvimento e entrega da atividade final da disciplina de Inteligência Artificial. O projeto está estruturado em três módulos independentes, cobrindo algoritmos de busca, meta-heurísticas para o TSP e aprendizado de máquina supervisionado.
 
-Todos os códigos foram desenvolvidos com foco em estruturação clara, eficiência computacional e ausência de dependência excessiva de bibliotecas de "caixa preta", priorizando a construção nativa de grafos, heurísticas e modelos.
+## Estrutura do Repositório
 
----
+```text
+.
+├── 1_sistemas_de_busca/
+│   ├── a_star.py
+│   ├── main.py
+│   ├── maze.py
+│   ├── read_matrix.py
+│   ├── robot.py
+│   ├── visualization.py
+│   ├── Readme.md
+│   ├── requirements.txt
+│   ├── data/
+│   └── results/
+├── 2_meta_heurística_no_tsp/
+│   ├── baseline.py
+│   ├── projeto_final_TSP_ACO.py
+│   ├── projeto_final_TSP_GA.py
+│   ├── run_experiments.py
+│   ├── read_tsp.py
+│   ├── Readme.md
+│   ├── requirements.txt
+│   ├── data/
+│   └── results/
+├── 3_aprendizado_supervisionado/
+│   ├── load_data.py
+│   ├── metrics.py
+│   ├── plots.py
+│   ├── run_baseline.py
+│   ├── run_refinements.py
+│   ├── split_data.py
+│   ├── README.md
+│   ├── articles/
+│   ├── data/
+│   └── results/
+└── README.md
 
-## 🗂️ Índice de Projetos
-### Módulo I: Inteligência Artificial
+## Módulos do Projeto
+###1. Sistemas de Busca e Heurísticas (1_sistemas_de_busca)
+Implementação e comparação de estratégias de pathfinding em um labirinto matricial (256x256). Avalia o desempenho de um agente guloso com memória em pilha contra o algoritmo A* utilizando a heurística de Chebyshev para garantir a admissibilidade.
 
-As pastas abaixo refletem a progressão da disciplina, organizados por área de estudo da Inteligência Artificial. Cada diretório contém seu próprio `README.md` com instruções detalhadas de execução e os resultados obtidos.
+###2. Meta-heurísticas no Caixeiro Viajante (2_meta_heurística_no_tsp)
+Otimização combinatória para o Traveling Salesperson Problem (TSP) testada em instâncias reais da TSPLIB. Compara o desempenho de um Algoritmo Genético (cruzamento OX e mutação por inversão) contra a Otimização por Colônia de Formigas (ACO), ambos limitados por um orçamento de tempo estrito, utilizando o Vizinho Mais Próximo como baseline.
 
-### 1. Buscas e Agentes Inteligentes
-Projetos focados em algoritmos de busca (cega e heurística) para resolução de problemas de espaço de estados.
-* **Labirinto Matricial (Busca Heurística)**: Agente inteligente navegando em labirintos NxN com métricas Euclidiana, Manhattan e Chebyshev.
-* **Puzzle de 8 peças**: Resolução de quebra-cabeças 3x3.
-* **Problema das N-Rainhas**: Posicionamento de rainhas em tabuleiro NxN livre de ataques.
+###3. Aprendizado Supervisionado (3_aprendizado_supervisionado)
+Pipeline completo de classificação para credit scoring utilizando um dataset com quase 220 mil registros desbalanceados e dados anonimizados. A escolha do XGBoost como modelo vencedor foi fundamentada por levantamento bibliográfico anexo (pasta articles/), aplicando otimização do limiar de decisão via Índice de Youden para maximizar a detecção da classe minoritária.
 
-### 2. Teoria dos Grafos e Caminhos Mínimos
-Representação e manipulação de grafos estruturados nativamente.
-* **Algoritmo de Dijkstra**: Estruturação via POO (Programação Orientada a Objetos) para encontrar o menor caminho e gerar matrizes de distâncias.
+##Execução e Dependências
+Cada um dos três módulos funciona de forma independente e possui seu próprio arquivo README.md detalhando os pré-requisitos, instruções de instalação (via requirements.txt quando aplicável) e comandos exatos para execução dos pipelines e geração de resultados/gráficos.
 
-### 3. Decisões Adversariais (Teoria dos Jogos)
-Implementação de agentes capazes de tomar decisões em ambientes competitivos de soma zero.
-* **Jogo da Velha (Algoritmo MinMax)**: IA imbatível calculando a próxima jogada ideal através de árvore de jogos.
-
-### 4. Metaheurísticas e Otimização
-Abordagens avançadas para resolver o Problema do Caixeiro Viajante (TSP) e outros problemas NP-Difíceis.
-* **Algoritmos Genéticos (GA)**
-* **Simulated Annealing**
-* **Otimização por Enxame de Partículas (PSO)**
-* **Otimização por Colônia de Formigas (ACO)**
-
-### 5. Lógica Fuzzy
-Sistemas de inferência baseados em regras para lidar com imprecisão e graus de verdade.
-* **Sistema de Mesada**: Avaliação inteligente usando lógica nebulosa.
-* **Qualidade do Leite**: Sistema Fuzzy para classificação e avaliação de qualidade.
-
-### 6. Machine Learning (Aprendizado Supervisionado)
-Modelos preditivos treinados sobre bases de dados estruturadas (ex: base Diabetes).
-* **K-Nearest Neighbors (KNN)**: Implementação e estratégias de otimização de hiperparâmetros.
-* **Árvores de Decisão**: Construção, treinamento e aperfeiçoamento de desempenho dos modelos.
-
----
-
-## 🛠️ Tecnologias e Ferramentas Utilizadas
-
-* **Linguagem:** Python 3.x
-* **Manipulação e Matemática:** NumPy, Math
-* **Visualização:** Matplotlib
-* **Paradigmas:** Programação Orientada a Objetos (POO), Estruturas de Dados Nativas (Pilhas, Filas, Dicionários, Matrizes).
-
----
-
-## 🚀 Como Explorar
-
-Cada subdiretório neste repositório é um projeto independente. Para testar qualquer um dos algoritmos:
-1. Clone este repositório: `git clone https://github.com/seu-usuario/nome-do-repositorio.git`
-2. Navegue até a pasta do módulo desejado.
-3. Leia o arquivo `README.md` local da pasta para instalar as dependências e executar o código fonte.
+Para reproduzir os experimentos, navegue até a pasta do módulo desejado e siga as instruções locais.
